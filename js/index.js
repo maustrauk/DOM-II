@@ -9,6 +9,8 @@ let nav_links = document.querySelectorAll(".nav-link");
 
 let busButton = document.createElement("button");
 busButton.textContent = "Click on IT!";
+let inputText = document.createElement("input");
+inputText.type = "text";
 
 //1
 body.addEventListener('wheel', () =>{ 
@@ -20,7 +22,10 @@ body.addEventListener('wheel', () =>{
 logo_h1.addEventListener('mouseover', () => intro.appendChild(busButton));
 
 //3
-busButton.addEventListener('click', (element) => element.target.style.background = "red");
+busButton.addEventListener('click', (event) => {
+    event.target.style.background = "red";
+    intro.appendChild(inputText);
+});
 
 nav_links.forEach(nav_link => {
     //4
@@ -31,3 +36,6 @@ nav_links.forEach(nav_link => {
 
 //6
 document.addEventListener('keydown', () => footer.style.background = "yellow");
+
+//7
+inputText.addEventListener('focus', (event) => event.target.style.background = "#cdf7f5");
