@@ -6,11 +6,16 @@ let footer = body.querySelector(".footer");
 let logo_h1 = document.querySelector(".logo-heading");
 let intro = document.querySelector(".intro");
 let nav_links = document.querySelectorAll(".nav-link");
+let nav_container = document.querySelector(".main-navigation div");
 
 let busButton = document.createElement("button");
 busButton.textContent = "Click on IT!";
 let inputText = document.createElement("input");
 inputText.type = "text";
+
+function lisiner (event) {
+    console.log(`event passing throw ${event.currentTarget.nodeName}`);
+}
 
 //1
 body.addEventListener('wheel', () =>{ 
@@ -26,12 +31,20 @@ busButton.addEventListener('click', (event) => {
     event.target.style.background = "red";
     intro.appendChild(inputText);
 });
+//propagation
+nav_container.addEventListener('click', lisiner);
+nav_container.addEventListener('click', event => event.stopPropagation());
+header_nav.addEventListener('click', lisiner);
 
 nav_links.forEach(nav_link => {
     //4
     nav_link.addEventListener('mouseenter', () => nav_link.style.color = "green");
     //5
     nav_link.addEventListener('mouseleave', () => nav_link.style.color = "blue");
+    nav_link.addEventListener('click', event =>  {
+        event.target.preventDefault();
+
+    });
 });
 
 //6
