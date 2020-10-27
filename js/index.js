@@ -42,3 +42,7 @@ inputText.addEventListener('focus', (event) => event.target.style.background = "
 
 //8
 inputText.addEventListener('blur', (event) => event.target.style.background = "#00948d");
+
+//9
+document.addEventListener('copy', () => footer.style.background = "black");
+
