@@ -46,3 +46,5 @@ inputText.addEventListener('blur', (event) => event.target.style.background = "#
 //9
 document.addEventListener('copy', () => footer.style.background = "black");
 
+//10
+document.addEventListener('paste', () => footer.style.background = "wight");
