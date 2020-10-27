@@ -39,3 +39,6 @@ document.addEventListener('keydown', () => footer.style.background = "yellow");
 
 //7
 inputText.addEventListener('focus', (event) => event.target.style.background = "#cdf7f5");
+
+//8
+inputText.addEventListener('blur', (event) => event.target.style.background = "#00948d");
