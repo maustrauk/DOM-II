@@ -34,3 +34,20 @@ body {
 .block--gray {
   background-color: gray;
 }
+
+.block--moves {
+  animation-name: blockMoving;
+  animation-duration: 50s;
+  animation-timing-function: linear;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards;
+}
+
+@keyframes blockMoving {
+  0% {
+    margin-left: 0%;
+  }
+  100% {
+    margin-left: 5000%;
+  }
+}
